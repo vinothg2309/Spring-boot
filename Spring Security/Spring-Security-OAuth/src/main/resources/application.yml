@@ -1,0 +1,13 @@
+server:
+  port: 9191
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 750225233835-ms8b8vqmgp8kmukamucclt9f7c6v60f1.apps.googleusercontent.com
+            client-secret: 4FF7uf-q4_sFULmccWizx2Dl
+          
+          
