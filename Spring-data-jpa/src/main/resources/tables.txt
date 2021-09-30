@@ -1,0 +1,29 @@
+
+create table if not exists employee_project
+(
+    employee_id bigint not null,
+    project_id  bigint not null,
+    primary key (employee_id, project_id),
+    constraint FK4yddvnm7283a40plkcti66wv9
+        foreign key (project_id) references project (id),
+    constraint FKb25s5hgggo6k4au4sye7teb3a
+        foreign key (employee_id) references employee (id)
+);
+
+
+drop view if exists employee_project_view;
+create view employee_project_view as
+select distinct employee_id,
+       first_name,
+       last_name,
+       project_id,
+       name     as project_name,
+       location as project_location,
+       budget   as project_budget
+from employee,
+     employee_project,
+     project
+where employee.id = employee_project.employee_id
+  and employee_project.project_id = project.id;
+
+

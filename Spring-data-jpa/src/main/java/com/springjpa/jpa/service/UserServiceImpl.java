@@ -8,14 +8,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.springjpa.jpa.model.User;
-import com.springjpa.jpa.repository.UserRepository;
+import com.springjpa.jpa.entity.User;
+import com.springjpa.jpa.repository.UserPageableRepository;
 
 @Service
 public class UserServiceImpl implements UserService{
 	
 	@Autowired
-	private UserRepository userRepository;
+	private UserPageableRepository userRepository;
 
 	@Override
 	public List<User> findEmployeeByPagination(Integer pageNo, Integer noOfRecord, String sortColumn, String sortingOrder) {

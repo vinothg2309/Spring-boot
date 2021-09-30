@@ -1,4 +1,13 @@
-2021-09-17 09:17:16 database: wrong user or password; user: "TEST"
+2021-09-29 11:25:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USER" not found; SQL statement:
+select user0_.user_id as user_id1_5_, user0_.email as email2_5_, user0_.password as password3_5_, user0_.user_name as user_nam4_5_ from user user0_ [42102-200]
+2021-09-29 11:27:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USER" not found; SQL statement:
+select user0_.user_id as user_id1_5_, user0_.email as email2_5_, user0_.password as password3_5_, user0_.user_name as user_nam4_5_ from user user0_ [42102-200]
+2021-09-29 11:28:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USER" not found; SQL statement:
+select user0_.user_id as user_id1_5_, user0_.email as email2_5_, user0_.password as password3_5_, user0_.user_name as user_nam4_5_ from user user0_ [42102-200]
+2021-09-29 12:10:22 database: wrong user or password; user: "TEST"
 org.h2.message.DbException: Wrong user name or password [28000-200]
 	at org.h2.message.DbException.get(DbException.java:205)
 	at org.h2.message.DbException.get(DbException.java:181)
@@ -59,7 +68,7 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 55 more
-2021-09-18 19:07:12 database: wrong user or password; user: "TEST"
+2021-09-29 17:04:50 database: wrong user or password; user: "TEST"
 org.h2.message.DbException: Wrong user name or password [28000-200]
 	at org.h2.message.DbException.get(DbException.java:205)
 	at org.h2.message.DbException.get(DbException.java:181)
@@ -120,124 +129,10 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 55 more
-2021-09-18 19:07:16 database: wrong user or password; user: "TEST"
-org.h2.message.DbException: Wrong user name or password [28000-200]
-	at org.h2.message.DbException.get(DbException.java:205)
-	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.message.DbException.get(DbException.java:170)
-	at org.h2.engine.Engine.openSession(Engine.java:131)
-	at org.h2.engine.Engine.openSession(Engine.java:192)
-	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
-	at org.h2.engine.Engine.createSession(Engine.java:166)
-	at org.h2.engine.Engine.createSession(Engine.java:29)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
-	at org.h2.Driver.connect(Driver.java:69)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
-	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
-	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
-	at org.h2.server.web.WebApp.login(WebApp.java:1008)
-	at org.h2.server.web.WebApp.process(WebApp.java:223)
-	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
-	at org.h2.server.web.WebServlet.doGet(WebServlet.java:129)
-	at org.h2.server.web.WebServlet.doPost(WebServlet.java:166)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
-	... 55 more
-2021-09-18 19:07:57 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW TABLE[*] USER"; SQL statement:
-SHOW TABLE USER [42000-200]
-2021-09-18 19:08:01 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW TABLE[*] USER"; SQL statement:
-SHOW TABLE USER [42000-200]
-2021-09-18 19:08:28 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESCRIBE[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESCRIBE USER [42001-200]
-2021-09-18 19:09:11 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESCRIBE[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESCRIBE USER [42001-200]
-2021-09-18 19:09:58 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESC[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-desc USER [42001-200]
-2021-09-18 19:09:59 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESC[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-desc USER [42001-200]
-2021-09-18 19:10:26 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW CREATE[*] TABLE USER"; SQL statement:
-SHOW CREATE TABLE USER [42000-200]
-2021-09-18 19:10:29 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW CREATE[*] TABLE USER"; SQL statement:
-SHOW CREATE TABLE USER [42000-200]
-2021-09-18 19:11:35 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESC[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESC USER [42001-200]
-2021-09-18 19:11:38 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESC[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESC USER [42001-200]
-2021-09-18 19:11:41 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESC[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESC USER [42001-200]
-2021-09-18 19:11:43 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESC[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESC USER [42001-200]
-2021-09-18 19:11:46 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESC[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESC USER [42001-200]
-2021-09-18 19:12:45 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESCRIBE[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESCRIBE USER [42001-200]
-2021-09-18 19:12:46 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESCRIBE[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESCRIBE USER [42001-200]
-2021-09-18 19:12:46 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESCRIBE[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESCRIBE USER [42001-200]
-2021-09-18 19:12:47 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESCRIBE[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESCRIBE USER [42001-200]
-2021-09-18 19:12:48 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESCRIBE[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESCRIBE USER [42001-200]
-2021-09-18 19:13:03 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESCRIBE[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESCRIBE USER [42001-200]
-2021-09-18 19:13:04 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DESCRIBE[*] USER"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
-DESCRIBE USER [42001-200]
+2021-09-29 17:06:05 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT EMPLOYEE0_.ID AS ID1_0_, EMPLOYEE0_.ADDRESS AS ADDRESS2_0_, EMPLOYEE0_.EMAIL AS EMAIL3_0_, EMPLOYEE0_.FIRST_NAME AS FIRST_NA4_0_, EMPLOYEE0_.LAST_NAME AS LAST_NAM5_0_, EMPLOYEE0_.PHONE AS PHONE6_0_ FROM EMPLOYEE EMPLOYEE0_ WHERE EMPLOYEE0_.FIRST_NAME LIKE 'John' OR EMPLOYEE0_.LAST_NAME LIKE 'Jo'
+
+SELECT[*] * FROM EMPLOYEE"; SQL statement:
+select employee0_.id as id1_0_, employee0_.address as address2_0_, employee0_.email as email3_0_, employee0_.first_name as first_na4_0_, employee0_.last_name as last_nam5_0_, employee0_.phone as phone6_0_ from employee employee0_ where employee0_.first_name like 'John' or employee0_.last_name like 'Jo'
+
+select * from EMPLOYEE [42000-200]

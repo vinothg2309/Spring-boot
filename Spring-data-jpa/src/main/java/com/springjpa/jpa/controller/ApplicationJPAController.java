@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springjpa.jpa.model.User;
-import com.springjpa.jpa.repository.UserRepository;
+import com.springjpa.jpa.entity.Employee;
+import com.springjpa.jpa.entity.User;
+import com.springjpa.jpa.repository.UserPageableRepository;
 import com.springjpa.jpa.service.UserService;
 
 @RestController
@@ -19,7 +20,7 @@ import com.springjpa.jpa.service.UserService;
 public class ApplicationJPAController {
 	
 	@Autowired
-	private UserRepository userRepository;
+	private UserPageableRepository userRepository;
 	
 	@Autowired
 	private UserService userService;
@@ -41,5 +42,5 @@ public class ApplicationJPAController {
 			@PathVariable String sortColumn, @PathVariable String sortingOrder) {
 		return userService.findEmployeeByPagination(pageNo, noOfRecord, sortColumn, sortingOrder);
 	}
-
+	
 }

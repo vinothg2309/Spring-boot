@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
-import com.springjpa.jpa.model.User;
+import com.springjpa.jpa.entity.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer>, PagingAndSortingRepository<User, Integer>{
+public interface UserPageableRepository extends JpaRepository<User, Integer>, PagingAndSortingRepository<User, Integer>{
 
 	User findByUserName(String username);
 	
