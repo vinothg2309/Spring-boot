@@ -22,8 +22,9 @@ public class ProjectController {
 	private ProjectRepository projectRepository;
 	
 	
+	// HR Management System, Timesheet Managerment, Online Reservation,Employee Portal, PayCheck System,401K System
 	@GetMapping("/findByName/{searchText}")
-	public List<Project> findByName(@PathVariable String searchText){
+	public Project findByName(@PathVariable String searchText){
 		return projectRepository.findByNameViaNamedNativeQuery(searchText);
 	}
 	

@@ -35,7 +35,7 @@ public interface ProjectRepository extends JpaRepository<Project, Long>{
 			+ " FROM project_table p GROUP BY p.location", nativeQuery = true)
 	List<EmpLocationCountInterface> noOfEmployeeByLocationAggregateInterfaceNative();
 
-	List<Project> findByNameViaNamedNativeQuery(String name);
+	Project findByNameViaNamedNativeQuery(String name);
 	
 
 }

@@ -27,7 +27,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @NamedNativeQuery(
 		 name="Project.findByNameViaNamedNativeQuery", 
-		 query = "SELECT * FROM project_table where name=:name")
+		 query = "SELECT * FROM project_table where name=:name",
+		 resultClass = Project.class)
 public class Project implements Serializable
 {
 	private static final long serialVersionUID = 3081407365462907799L;

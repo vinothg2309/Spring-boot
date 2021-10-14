@@ -10,6 +10,14 @@
 
 /findAllByEmployeeByNamedQuery in EmployeeController.java --> Employee.java --> @NamedQuery && EmployeeRepository.java
 
+```
+@NamedNativeQuery(
+		 name="Project.findByNameViaNamedNativeQuery", 
+		 query = "SELECT * FROM project_table where name=:name",
+		 resultClass = Project.class)
+```
+
+
 #### Specification
 
 /findEmployeeByFirstOrLastNameSpec & /findEmployeeByFirstAndLastNameSpec in EmployeeController.java
