@@ -15,4 +15,8 @@ public interface EmployeeDAO {
 
 	List<Employee> findEmployeeByFirstAndLastNameUsingJPASpecification(EmployeeModel emp);
 
+	List<Employee> findEmployeeByNameViaQueryDSL(EmployeeModel emp);
+
+	List<Employee> findAllByEmployeeByNamedQuery(String firstName);
+
 }

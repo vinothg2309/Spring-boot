@@ -13,5 +13,10 @@ public interface EmployeeRepository  extends JpaRepository<Employee, Long>, JpaS
 	List<Employee> findByFirstNameOrLastNameIgnoreCase(String searchText, String searchText2);
 	
 	List<Employee> findAll(Specification<Employee> spec);
+	
+	// Its referring to named query available in Employee entity class. 
+	// By default, Spring Data JPA checks for a named JPQL or a named native query that follows 
+	// the naming convention <entity class name>.<repository method name>
+	List<Employee> findAllByEmpFirstNameAndLastNameDesc(String first_name);
 
 }

@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -19,13 +20,14 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * @author Pavan Jadda
- */
+
 @Entity
-@Table(name = "project")
+@Table(name = "project_table")
 @Data
 @NoArgsConstructor
+@NamedNativeQuery(
+		 name="Project.findByNameViaNamedNativeQuery", 
+		 query = "SELECT * FROM project_table where name=:name")
 public class Project implements Serializable
 {
 	private static final long serialVersionUID = 3081407365462907799L;

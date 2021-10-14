@@ -22,13 +22,8 @@ public class EmployeeSpecification {
 	}
 	
 	public static Specification<Employee> searchByLastNameContains(String lastName){
-		return new Specification<Employee>() {
-
-			@Override
-			public Predicate toPredicate(Root<Employee> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
-				return criteriaBuilder.like(criteriaBuilder.lower(root.get("lastName")), "%"+lastName.toLowerCase()+"%");
-			}
-		};
+		return (root,query,criteriaBuilder) -> criteriaBuilder.like(criteriaBuilder.lower(root.get("lastName")),
+				"%"+lastName.toLowerCase()+"%");
 	}
 
 }

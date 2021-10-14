@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -29,6 +30,8 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@NamedQuery(name = "Employee.findAllByEmpFirstNameAndLastNameDesc",
+query = "SELECT e FROM Employee e WHERE e.firstName = :first_name ORDER by e.lastName desc")
 public class Employee implements Serializable
 {
 	private static final long serialVersionUID = 3081407365462907799L;

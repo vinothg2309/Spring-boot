@@ -42,5 +42,17 @@ public class EmployeeController {
 	public List<Employee> findEmployeeByFirstAndLastNameUsingJPASpecification(@RequestBody EmployeeModel emp){
 		return employeeDAO.findEmployeeByFirstAndLastNameUsingJPASpecification(emp);
 	}
+	
+	//{ "firstName": "john", "lastName": "doe"}
+	@PostMapping("/findEmployeeByNameViaQueryDSL")
+	public List<Employee> findEmployeeByNameViaQueryDSL(@RequestBody EmployeeModel emp){
+		return employeeDAO.findEmployeeByNameViaQueryDSL(emp);
+	}
+	
+	//{ "firstName": "john", "lastName": "doe"}
+	@PostMapping("/findAllByEmployeeByNamedQuery/{firstName}")
+	public List<Employee> findAllByEmployeeByNamedQuery(@PathVariable String firstName){
+		return employeeDAO.findAllByEmployeeByNamedQuery(firstName);
+	}
 
 }

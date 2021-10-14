@@ -1,5 +1,7 @@
 package com.springjpa.jpa.dao.impl;
 
+import static org.springframework.data.jpa.domain.Specification.where;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,12 +17,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.springjpa.jpa.dao.EmployeeDAO;
 import com.springjpa.jpa.entity.Employee;
+import com.springjpa.jpa.entity.QEmployee;
 import com.springjpa.jpa.model.EmployeeModel;
+import com.springjpa.jpa.repository.EmployeeQueryDSLRepository;
 import com.springjpa.jpa.repository.EmployeeRepository;
 import com.springjpa.jpa.specification.EmployeeSpecification;
-import static org.springframework.data.jpa.domain.Specification.where;
 
 
 @Repository
@@ -31,6 +35,9 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	
 	@Autowired
 	private EmployeeRepository employeeRepository;
+	
+	@Autowired
+	private EmployeeQueryDSLRepository employeeQueryDSLRepository;
 
 	@Override
 	public List<Employee> findEmployeeByText(String searchText) {
@@ -72,6 +79,23 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	public List<Employee> findEmployeeByFirstAndLastNameUsingJPASpecification(EmployeeModel emp) {
 		return employeeRepository.findAll(where(EmployeeSpecification.employeeSearchByFirstNameContains(emp.getFirstName())
 				.and(EmployeeSpecification.searchByLastNameContains(emp.getLastName()))));
+	}
+
+	@Override
+	public List<Employee> findEmployeeByNameViaQueryDSL(EmployeeModel emp) {
+		JPAQueryFactory queryFactory = new JPAQueryFactory(entityManager);
+		QEmployee employee = QEmployee.employee;
+		List<Employee> employees = queryFactory.selectFrom(employee)
+				  .where(employee.firstName.contains(emp.getFirstName())
+						  .or(employee.lastName.contains(emp.getLastName())))
+				  .fetch();
+		
+		return employees;
+	}
+
+	@Override
+	public List<Employee> findAllByEmployeeByNamedQuery(String firstName) {
+		return employeeRepository.findAllByEmpFirstNameAndLastNameDesc(firstName);
 	}
 	
 	
