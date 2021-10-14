@@ -14,8 +14,8 @@ import com.springjpa.jpa.model.EmployeeLocationCount;
 public interface ProjectRepository extends JpaRepository<Project, Long>{
 	
 	// Customizing the Result with Class Constructors
-	@Query("SELECT new com.springjpa.jpa.model.EmployeeLocationCount(p.location, COUNT(p.location)"
-			+ " FROM project as p GROUP BY p.location")
+	@Query("SELECT new com.springjpa.jpa.model.EmployeeLocationCount(p.location, COUNT(p.location))"
+			+ " FROM Project p GROUP BY p.location")
 	List<EmployeeLocationCount> countNoOfEmployeeByLocationAggregate();
 	
 	/*
@@ -25,14 +25,14 @@ public interface ProjectRepository extends JpaRepository<Project, Long>{
 	 * each projected attribute with the property name found in the interface.
 	 */
 	@Query("SELECT p.location AS location, COUNT(p.location) As employeeCount"
-			+ " FROM project as p GROUP BY p.location")
+			+ " FROM Project p GROUP BY p.location")
 	List<EmpLocationCountInterface> countNoOfEmployeeByLocationAggregateInterface();
 	
 	
 	// Customizing the Result of Native Queries. 
 	// One advantage of interface-based projection is that we can use it for native queries
 	@Query(value="SELECT p.location AS location, COUNT(p.location) As employeeCount"
-			+ " FROM project_table as p GROUP BY p.location", nativeQuery = true)
+			+ " FROM project_table p GROUP BY p.location", nativeQuery = true)
 	List<EmpLocationCountInterface> noOfEmployeeByLocationAggregateInterfaceNative();
 
 	List<Project> findByNameViaNamedNativeQuery(String name);
